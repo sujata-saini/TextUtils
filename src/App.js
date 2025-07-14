@@ -111,7 +111,7 @@ function App() {
   }
 
   return (
-    <Router basename="/TextUtils">
+    <Router basename="/">
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
       <div className="container my-3">
