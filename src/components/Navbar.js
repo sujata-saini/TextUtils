@@ -50,35 +50,25 @@
 //   </nav>
 //   )
 // }
-import React from 'react';
-import { Link } from "react-router-dom";
-
-export default function Navbar(props) {
-  return (
-    <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
-      <div className="container-fluid d-flex justify-content-between align-items-center">
-
-        {/* Brand */}
-        <Link className="navbar-brand" to="/">TextUtils</Link>
-
-        {/* Navigation items and switch all in one flex row */}
-        <div className="d-flex align-items-center gap-3 flex-wrap">
-          <Link className="nav-link active" to="/">Home</Link>
-          <Link className="nav-link active" to="/about">About Text</Link>
-
-          <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
-            <input
-              className="form-check-input"
-              type="checkbox"
-              role="switch"
-              id="flexSwitchCheckDefault"
-              onClick={props.toggleMode}
-            />
-            <label className="form-check-label ms-1" htmlFor="flexSwitchCheckDefault">Switch Mode</label>
-          </div>
-        </div>
-
+<nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
+  <div className="container-fluid">
+    <Link className="navbar-brand" to="/">TextUtils</Link>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    <div className="collapse navbar-collapse d-lg-flex justify-content-between" id="navbarNav">
+      <ul className="navbar-nav d-flex flex-row gap-3">
+        <li className="nav-item">
+          <Link className="nav-link" to="/">Home</Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to="/about">About Text</Link>
+        </li>
+      </ul>
+      <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
+        <input className="form-check-input" type="checkbox" id="switchMode" onClick={props.toggleMode} />
+        <label className="form-check-label ms-2" htmlFor="switchMode">Switch Mode</label>
       </div>
-    </nav>
-  );
-}
+    </div>
+  </div>
+</nav>
