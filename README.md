@@ -1,4 +1,4 @@
-📘 TextUtils
+📘 
 TextUtils is a simple and efficient React web application that allows users to analyze and transform text. It offers various utilities like word/character counting, case conversion etc.
 
 🚀 Features
