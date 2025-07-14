@@ -56,39 +56,29 @@ import { Link } from "react-router-dom";
 export default function Navbar(props) {
   return (
     <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
-      <div className="container-fluid">
+      <div className="container-fluid d-flex justify-content-between align-items-center">
+
+        {/* Brand */}
         <Link className="navbar-brand" to="/">TextUtils</Link>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
 
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-    
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
-            <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/">Home</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link active" to="/about">About Text</Link>
-            </li>
-          </ul>
+        {/* Navigation items and switch all in one flex row */}
+        <div className="d-flex align-items-center gap-3 flex-wrap">
+          <Link className="nav-link active" to="/">Home</Link>
+          <Link className="nav-link active" to="/about">About Text</Link>
 
-      
-          <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'} d-flex align-items-center`}>
+          <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
             <input
               className="form-check-input"
-              onClick={props.toggleMode}
               type="checkbox"
-         role="switch"
+              role="switch"
               id="flexSwitchCheckDefault"
+              onClick={props.toggleMode}
             />
-            <label className="form-check-label ms-2" htmlFor="flexSwitchCheckDefault">
-              Switch mode
-            </label>
+            <label className="form-check-label ms-1" htmlFor="flexSwitchCheckDefault">Switch Mode</label>
           </div>
         </div>
+
       </div>
     </nav>
   );
 }
-
