@@ -4,12 +4,13 @@ import Navbar from './components/Navbar';
 import Text from './components/Textmy';
 import Alert from './components/Alert';
 import About from './components/About';
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Routes,
+//   Route
+// } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState('light');
@@ -40,7 +41,7 @@ function App() {
   }
 
   return (
-    <Router basename="/TextUtils">
+    <Router >
       <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
       <Alert alert={alert} />
       <div className="container my-3">
